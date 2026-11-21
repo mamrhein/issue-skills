@@ -20,13 +20,15 @@ using the `gh` CLI.
    that line is the issue's flag and must be used as the GitHub label. Use the
    remaining text as the issue body. If the first line is not one of these
    three keywords, the entire text is the body and there is no label.
-3. Derive a short title from the body: capture the essence of the problem or
-   request in imperative mood, max ~70 characters, no trailing punctuation.
+3. Check the text for conflicting or unclear requirements. If there are any,
+   list them, propose a revision of the text and ask the user for approval. If the user asks for changes, revise the text accordingly and ask for approval again. Do not write anything to GitHub before explicit approval.
+4. When the user finally approved the text, derive a short title from the body:
+   capture the essence of the problem or request in imperative mood, max ~70 characters, no trailing punctuation.
    Do not invent facts that are not in the body.
-4. If the body (after stripping the flag line) is empty, do not create an
+5. If the body (after stripping the flag line) is empty, do not create an
    issue. Ask the user for the issue text instead.
-5. Run `gh` from the repo root so it targets the `origin` remote
-   (`mamrhein/cocomo`). Create the issue:
+6. Run `gh` from the repo root so it targets the `origin` remote. 
+   Create the issue:
 
    ```sh
    gh issue create --title "<derived title>" --body-file - <<'EOF'
@@ -36,7 +38,7 @@ using the `gh` CLI.
 
    Use `--body-file -` with a heredoc for multi-line bodies to avoid quoting
    problems. Single-line bodies may use `--body "..."`.
-6. When a flag was given, pass it as a label: add `--label defect` (or
+7. When a flag was given, pass it as a label: add `--label defect` (or
    `enhancement` / `redesign`). Labels must exist before they can be applied;
    check with `gh label list --search <flag>` and create a missing one with
    `gh label create <flag> --color 0e8a16` (pick a distinct color per flag if
