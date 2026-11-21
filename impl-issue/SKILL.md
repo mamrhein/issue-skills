@@ -1,8 +1,7 @@
 ---
 name: impl-issue
 description: >-
-  Implement the resolution of a GitHub issue in the project repo
-  (mamrhein/cocomo) using the gh CLI, following the plan written in the issue.
+  Implement the resolution of a GitHub issue in the project repo using the gh CLI, following the plan written in the issue.
   Use this skill whenever a request invokes it (e.g. via the /impl-issue slash
   command or an explicit mention) together with an issue number (optionally
   prefixed with #) to implement.
@@ -18,8 +17,7 @@ propose a commit message, and close the issue after committing.
 1. Extract the issue number from the request text: the first integer found
    (strip a leading `#`). If no number is present, ask the user for the issue
    number.
-2. Fetch the issue from the repo root (so `gh` targets the `origin` remote,
-   `mamrhein/cocomo`):
+2. Fetch the issue from the repo root (so `gh` targets the `origin` remote):
 
    ```sh
    gh issue view <number> --json state,title,body,labels

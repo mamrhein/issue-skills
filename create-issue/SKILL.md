@@ -1,11 +1,8 @@
 ---
 name: create-issue
 description: >-
-  Create a GitHub issue in the project repo (mamrhein/cocomo) from the text of
-  the user's request, using the gh CLI. Use this skill whenever a request
-  invokes it (e.g. via the /create-issue slash command or an explicit mention)
-  and contains text describing a bug, feature, or redesign to file — even if
-  the request does not say the words "issue" or "GitHub".
+  Create a GitHub issue in the project repo from the text of the user's request, using the gh CLI. 
+  Use this skill whenever a request invokes it (e.g. via the /create-issue slash command or an explicit mention) and contains text describing a bug, feature, or redesign to file — even if the request does not say the words "issue" or "GitHub".
 ---
 
 # Create issue
